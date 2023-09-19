@@ -98,11 +98,11 @@ xhr.onload = function() {
 xhr.send(json);*/
 
 //PROMISE
-var f = function(relsolve, reject) {
+/*var f = function(relsolve, reject) {
     relsolve();
     //reject();
 }
-var promise = new Promise(f);
+var promise = new Promise(f);*/
 /*promise
     .then(
         function() {
@@ -119,7 +119,7 @@ var promise = new Promise(f);
             console.log('Finally!');
         }
     );*/
-promise
+/*promise
     .then(
         function() {
             console.log('1!');
@@ -134,4 +134,65 @@ promise
         function() {
             console.log('3!');
         }
+    )*/
+/*promise
+    .then(
+        function() {
+            return new
+            Promise(function(resolve) {
+                setTimeout(resolve,
+                    3000);
+            });
+        }
     )
+    .then(
+        function(data) {
+            console.log(data);
+            return 2;
+        }
+    )
+    .then(
+        function(data) {
+            console.log(data);
+        }
+    )*/
+
+// FETCH
+/*fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(
+        (data) => {
+            var htmls = data.map(
+                function(posts) {
+                    return `<li> 
+<h2>${posts.id}</h2>
+<h2>${posts.title}</h2>
+</li>`
+                }
+            );
+            var html = htmls.join();
+            var text =
+                document.getElementById('info').innerHTML = html;
+        }
+    )
+    .catch(() => console.log('Có lỗi!'))*/
+/*fetch('https://fakestoreapi.com/products')
+    .then((response) => response.json())
+    .then((json) => console.log(json));*/
+/*fetch('https://fakestoreapi.com/products/1')
+    .then((response) => response.json())
+    .then((json) => console.log(json));*/
+/*fetch('https://fakestoreapi.com/products/1', {
+        method: 'PUT',
+        body: JSON.stringify({
+            id: 1,
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((json) => console.log(json));*/
